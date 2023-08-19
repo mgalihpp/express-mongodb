@@ -10,6 +10,10 @@ app.use(cors());
 
 connectDB();
 
+app.get("/", async (req, res) => {
+  res.status(200).json({message : "ok"})
+})
+
 app.get("/List", async (req, res) => {
   try {
     const list = await ListModel.find({});
